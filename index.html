@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <meta name="description" content="Free, fast image tools that keep your files on your device. Compress and resize images, make passport photos, and combine pictures into PDFs—all processed in your browser." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MyPixelKit" />
+    <meta property="og:url" content="https://mypixelkit.in/" />
+    <meta property="og:title" content="MyPixelKit - Free, Fast &amp; 100% Private Image Tools" />
+    <meta property="og:description" content="Compress, resize, make passport photos, and create PDFs with image tools that process files privately on your device." />
+    <meta property="og:image" content="https://mypixelkit.in/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MyPixelKit — private image tools, processed on your device" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MyPixelKit - Free, Fast &amp; 100% Private Image Tools" />
+    <meta name="twitter:description" content="Compress, resize, make passport photos, and create PDFs locally in your browser." />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="MyPixelKit" />
+    <title>MyPixelKit - Free, Fast &amp; 100% Private Image Tools</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <a class="sidebar-brand" href="#dashboard" aria-label="mypixelkit.in dashboard"><span class="star-mark" aria-hidden="true">✦</span><span>mypixelkit.in</span></a>
+        <div class="nav-caption">WORKSPACE</div>
+        <nav class="side-nav">
+          <a class="nav-link active" href="#dashboard" data-nav="dashboard"><span>▦</span>Dashboard</a>
+          <a class="nav-link" href="#tools" data-nav="tools"><span>✧</span>Image Tools</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="compress"><span>↓</span>Compress</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="resize"><span>↗</span>Resize</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="convert"><span>⇄</span>Convert</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="crop"><span>◩</span>Crop &amp; Rotate</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="watermark"><span>✎</span>Watermark</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="pdf"><span>▤</span>PDF Maker (Image to PDF)</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="passport"><span>▣</span>Passport Photo</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="signature"><span>✍</span>Sign Resizer</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="metadata"><span>⌑</span>Remove Metadata</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="background"><span>◐</span>Background Remover</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="ocr"><span>▤</span>Image to Text (OCR)</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="dpi"><span>◉</span>DPI Converter (300 DPI)</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="palette"><span>▥</span>Color Palette Extractor</a>
+          <a class="nav-link nav-sub" href="#tools" data-nav-tool="grid"><span>▦</span>Image Grid Splitter</a>
+          <a class="nav-link nav-divider" href="#tools" data-nav-tool="compress"><span>▤</span>Batch Process</a>
+          <a class="nav-link" href="#tools" data-nav-tool="metadata"><span>⌑</span>Privacy &amp; Security</a>
+        </nav>
+        <div class="sidebar-bottom"><a class="nav-link" href="#faq"><span>?</span>Support</a><div class="privacy-status"><i></i><span>Private by design<small>Files stay on this device</small></span></div></div>
+      </aside>
+      <button class="sidebar-scrim" id="sidebarScrim" type="button" aria-label="Close navigation"></button>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="mobile-menu" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+          <a class="topbar-brand" href="#dashboard" aria-label="mypixelkit.in dashboard"><span class="star-mark" aria-hidden="true">✦</span><span>mypixelkit.in</span></a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span></button>
+          <button class="install-app" id="installApp" type="button" aria-label="Install MyPixelKit">Install</button>
+          <button class="new-task" id="newTask" type="button"><span>＋</span> Upload</button>
+          <input class="hidden" id="quickFileInput" type="file" accept="image/*" multiple aria-label="Choose images for a new task" />
+        </header>
+
+        <main id="dashboard" class="dashboard-main">
+          <section class="welcome-row"><div><h1>Your Private Image Workspace</h1></div><div class="date-pill"><span class="live-dot"></span> Client-side &amp; ready</div></section>
+          <section class="quick-launch" aria-labelledby="quick-title">
+            <input id="quickDropInput" class="hidden" type="file" accept="image/*" multiple aria-label="Choose images to process" />
+            <div class="quick-upload-icon">↑</div><div class="quick-copy"><h2 id="quick-title">Start with your images</h2><p>Drop files here, or browse from your device. Your images never leave this browser.</p><small>JPG, PNG, WebP and more · Up to 150 MB per file</small></div>
+            <button class="browse-button" id="browseImages" type="button">Browse images <span>→</span></button>
+          </section>
+
+          <label class="search-wrap tools-search"><span aria-hidden="true">⌕</span><input id="toolSearch" type="search" aria-label="Search image tools" placeholder="Search tools (e.g., compress, resize, passport, pdf)..." /><kbd>Ctrl K</kbd></label>
+          <section class="section-block tools-section" id="tools" aria-labelledby="tools-title">
+            <div class="section-heading"><div><span class="section-label">IMAGE WORKSHOP</span><h2 id="tools-title">Quick launch tools</h2></div><span class="section-aside">Choose a tool to configure your task</span></div>
+            <div class="tools-grid" id="toolsGrid">
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="compress" data-category="compression" data-search="compress compression smaller file lossless lossy batch"><span class="tool-icon">↓</span><span class="tool-card-copy"><strong>Compress</strong><small>Reduce file size while keeping quality</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="resize" data-category="resize" data-search="resize dimensions aspect ratio presets"><span class="tool-icon">↗</span><span class="tool-card-copy"><strong>Resize</strong><small>Set dimensions and preserve proportions</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="convert" data-category="conversion" data-search="convert jpg jpeg png webp avif format"><span class="tool-icon">⇄</span><span class="tool-card-copy"><strong>Convert format</strong><small>Export to JPG, PNG, WebP or AVIF</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="crop" data-category="resize" data-search="crop rotate trim image"><span class="tool-icon">◩</span><span class="tool-card-copy"><strong>Crop &amp; rotate</strong><small>Frame, crop and rotate your image</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="watermark" data-category="privacy" data-search="watermark text logo overlay branding"><span class="tool-icon">✎</span><span class="tool-card-copy"><strong>Watermark</strong><small>Add a text mark to protect your work</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="pdf" data-category="pdf" data-search="image to pdf photos combine document pages"><span class="tool-icon">▤</span><span class="tool-card-copy"><strong>Image to PDF</strong><small>Combine photos into one document</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="passport" data-category="resize" data-search="passport photo government exam forms white blue background"><span class="tool-icon">▣</span><span class="tool-card-copy"><strong>Passport photo</strong><small>Standard sizing for forms and applications</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="signature" data-category="compression" data-search="signature resizer crop enhance contrast optimize official forms"><span class="tool-icon">✍</span><span class="tool-card-copy"><strong>Sign resizer</strong><small>Crop and optimize signature images</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="metadata" data-category="privacy" data-search="remove exif metadata privacy security"><span class="tool-icon">⌑</span><span class="tool-card-copy"><strong>Remove metadata</strong><small>Strip EXIF and embedded data</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="background" data-category="editing" data-search="background remover transparent cutout png photo"><span class="tool-icon">◐</span><span class="tool-card-copy"><strong>Background remover</strong><small>Remove photo background and export clean transparent PNG locally</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="ocr" data-category="utility" data-search="image to text OCR documents screenshots receipts extract"><span class="tool-icon">▤</span><span class="tool-card-copy"><strong>Image to text (OCR)</strong><small>Extract copyable text from documents, screenshots, and receipts</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="dpi" data-category="conversion" data-search="DPI converter 300 resolution printing official applications"><span class="tool-icon">◉</span><span class="tool-card-copy"><strong>DPI converter</strong><small>Change image resolution to 300 DPI for printing and official applications</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="palette" data-category="utility" data-search="color palette extractor dominant swatches hex"><span class="tool-icon">▥</span><span class="tool-card-copy"><strong>Color palette extractor</strong><small>Extract dominant color swatches and HEX codes from any picture</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="grid" data-category="editing" data-search="image grid splitter slice rows columns social grid"><span class="tool-icon">▦</span><span class="tool-card-copy"><strong>Image grid splitter</strong><small>Slice images into equal rows and columns (e.g. 3x3 for social grid)</small></span><span class="card-arrow">→</span></button></div>
+              <div class="tool-item"><button class="tool-card" type="button" data-tool="frame" data-category="editing" data-search="round corners mockup frame screenshot border shadow"><span class="tool-icon">▢</span><span class="tool-card-copy"><strong>Round corners &amp; mockup frame</strong><small>Add rounded edges, colored borders, and soft shadows to screenshots</small></span><span class="card-arrow">→</span></button></div>
+            </div>
+            <p class="empty-tools" id="emptyTools" hidden>No tools match that search. Try another term.</p>
+          </section>
+
+          <section class="faq" id="faq" aria-label="Support"><details><summary>Are my images uploaded or stored anywhere?</summary><p>No. Image processing happens in your browser on your device. PixelKit does not upload your images to a server.</p></details><details><summary>Which image formats can I use?</summary><p>PixelKit accepts image formats your browser can open. Output is available as JPG, PNG, or WebP; AVIF export depends on browser support.</p></details></section>
+
+          <section class="knowledge-base" id="tools-guide" aria-labelledby="guide-title">
+            <div class="guide-heading">
+              <span class="section-label">TOOLS DIRECTORY &amp; GUIDE</span>
+              <h2 id="guide-title">Everything You Can Do With PixelKit</h2>
+              <p>A complete breakdown of our 100% private, browser-based image toolkit—how each tool works and when to use it.</p>
+            </div>
+            <div class="guide-grid">
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">↓</span><div><h3>Compress Image</h3><div class="guide-badges"><span>Fast</span><span>Size control</span><span>Privacy safe</span></div></div></div><ul><li><strong>How it works:</strong> Re-encodes images in your browser using canvas and WebP/JPEG compression, with adjustable quality and a target file size.</li><li><strong>Best for:</strong> Email attachments, faster-loading websites, and forms with strict limits such as 50 KB or 100 KB.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">↗</span><div><h3>Resize Image</h3><div class="guide-badges"><span>Custom dimensions</span><span>Aspect ratio</span><span>Privacy safe</span></div></div></div><ul><li><strong>How it works:</strong> Changes pixel width and height, with a lock-aspect-ratio option and quick presets.</li><li><strong>Best for:</strong> Banners, social media thumbnails, wallpapers, and matching image upload requirements.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">⇄</span><div><h3>Format Converter</h3><div class="guide-badges"><span>JPG</span><span>PNG</span><span>WebP / AVIF*</span></div></div></div><ul><li><strong>How it works:</strong> Exports images from a browser canvas to JPG, PNG, WebP, or AVIF when supported by your browser.</li><li><strong>Best for:</strong> Transparent PNGs, modern web formats, or widely compatible JPG photos. *AVIF export support varies by browser.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">▣</span><div><h3>Passport Photo Maker</h3><div class="guide-badges"><span>413 × 531 px</span><span>300 DPI size</span><span>Privacy safe</span></div></div></div><ul><li><strong>How it works:</strong> Center-crops to a 3.5 × 4.5 cm proportion and exports at 413 × 531 px, with white or light-blue fill for transparent areas.</li><li><strong>Best for:</strong> Preparing a photo for exam forms, visa or passport submissions, government IDs, and college applications. It does not remove an existing background.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">✍</span><div><h3>Signature Resizer</h3><div class="guide-badges"><span>Contrast boost</span><span>20 KB target</span><span>Privacy safe</span></div></div></div><ul><li><strong>How it works:</strong> Trims blank edges, boosts grayscale contrast, and compresses toward a 20 KB target.</li><li><strong>Best for:</strong> SSC, UPSC, banking, and other online application portals that require signature uploads.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">▤</span><div><h3>Image to PDF Maker</h3><div class="guide-badges"><span>Up to 100 images</span><span>Multi-page PDF</span><span>Private</span></div></div></div><ul><li><strong>How it works:</strong> Arranges up to 100 images into one multi-page PDF, with page size, orientation, margins, and quality options.</li><li><strong>Best for:</strong> Document scans, multi-page assignments, receipt compilations, and office records.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">◩</span><div><h3>Crop &amp; Rotate</h3><div class="guide-badges"><span>1:1</span><span>16:9</span><span>90° rotation</span></div></div></div><ul><li><strong>How it works:</strong> Center-crops to a square or 16:9 aspect ratio and rotates in 90-degree steps.</li><li><strong>Best for:</strong> Trimming edges, making square avatar photos, and correcting camera orientation.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">⌑</span><div><h3>Remove Metadata</h3><div class="guide-badges"><span>EXIF cleanup</span><span>Privacy safe</span><span>On-device</span></div></div></div><ul><li><strong>How it works:</strong> Re-encodes the image through a clean canvas to remove embedded metadata such as GPS, camera details, and timestamps.</li><li><strong>Best for:</strong> Protecting personal information before sharing photos on public forums or social media.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">✎</span><div><h3>Watermark Tool</h3><div class="guide-badges"><span>Text mark</span><span>Opacity control</span><span>9 positions</span></div></div></div><ul><li><strong>How it works:</strong> Adds a custom text watermark with adjustable opacity and position.</li><li><strong>Best for:</strong> Copyright notices, branding artwork, and marking identity-proof images.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">◐</span><div><h3>Background Remover</h3><div class="guide-badges"><span>Transparent PNG</span><span>Local processing</span></div></div></div><ul><li><strong>How it works:</strong> Compares image colors with the corner background color and makes similar pixels transparent; a tolerance control adjusts the cutout.</li><li><strong>Best for:</strong> Simple product shots, stickers, and profile pictures with a plain, evenly colored background.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">▤</span><div><h3>Image to Text (OCR)</h3><div class="guide-badges"><span>Browser-based</span><span>Copyable text</span><span>Private</span></div></div></div><ul><li><strong>How it works:</strong> Uses built-in browser text recognition when available to detect and transcribe text from an image.</li><li><strong>Best for:</strong> Extracting text from book pages, bills, receipts, and screenshots. OCR availability depends on the browser.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">◉</span><div><h3>DPI Converter (300 DPI)</h3><div class="guide-badges"><span>72 / 150 / 300 DPI</span><span>Pixel dimensions kept</span></div></div></div><ul><li><strong>How it works:</strong> Writes the chosen resolution into PNG or JPEG density metadata without resampling the image pixels.</li><li><strong>Best for:</strong> Preparing files for printing, brochures, and photo labs that request a specific DPI value.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">▥</span><div><h3>Color Palette Extractor</h3><div class="guide-badges"><span>Color swatches</span><span>HEX codes</span><span>Fast</span></div></div></div><ul><li><strong>How it works:</strong> Samples image colors locally, groups similar shades, and displays five dominant color swatches with HEX values.</li><li><strong>Best for:</strong> Finding a color scheme for design projects, presentations, and web pages.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">▦</span><div><h3>Image Grid Splitter</h3><div class="guide-badges"><span>3 × 3</span><span>2 × 2</span><span>ZIP download</span></div></div></div><ul><li><strong>How it works:</strong> Slices an image into equal pieces using a 3 × 1, 3 × 3, or 2 × 2 layout, then bundles them in a ZIP.</li><li><strong>Best for:</strong> Social media grids, tiled artwork, and dividing a large image into smaller parts.</li></ul></article>
+              <article class="guide-card"><div class="guide-card-top"><span class="guide-icon" aria-hidden="true">▢</span><div><h3>Round Corners &amp; Mockup Frame</h3><div class="guide-badges"><span>Rounded edges</span><span>Soft shadow</span><span>Custom color</span></div></div></div><ul><li><strong>How it works:</strong> Adds rounded corners, a colored canvas, and an adjustable soft shadow around your image.</li><li><strong>Best for:</strong> Polishing screenshots, creating simple mockup-style images, and framing visuals for posts or presentations.</li></ul></article>
+            </div>
+          </section>
+        </main>
+        <footer class="site-footer">
+          <div class="footer-brand">
+            <a class="footer-brand-link" href="#dashboard" aria-label="mypixelkit.in home"><span class="star-mark" aria-hidden="true">✦</span><span>mypixelkit.in</span></a>
+            <p>100% Private, browser-based image utility workspace. Your images stay on your device and are never uploaded to any server.</p>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <button type="button" data-legal-modal="privacy">Privacy Policy</button>
+            <button type="button" data-legal-modal="terms">Terms of Service</button>
+            <a href="mailto:?subject=PixelKit%20feedback">Feedback &amp; Support</a>
+            <a href="#dashboard">Back to Top <span aria-hidden="true">↑</span></a>
+          </nav>
+          <div class="footer-meta">
+            <span>© 2026 mypixelkit.in. All rights reserved.</span>
+            <span class="security-badge">🔒 Zero Server Storage <span aria-hidden="true">•</span> Client-Side Only</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <dialog class="legal-dialog" id="legalDialog" aria-labelledby="legalTitle">
+      <div class="legal-dialog-head"><h2 id="legalTitle">Privacy Policy</h2><button class="legal-close" type="button" aria-label="Close dialog">×</button></div>
+      <div class="legal-dialog-content" data-legal-content="privacy">
+        <p><strong>Your images stay on your device.</strong> MyPixelKit processes selected images locally in your browser using browser APIs such as Canvas. Image files are not uploaded to MyPixelKit servers, and the app does not store them remotely.</p>
+        <h3>Local files and downloads</h3><p>Files you choose are used only in the current browser session to create the result you request. You control whether to save or share downloaded results. Closing the page clears the app's in-memory working data.</p>
+        <h3>Website requests</h3><p>Loading this website still makes ordinary requests to the web host for its pages and app files. The host may process standard technical request logs under its own policies. This is separate from image processing; your selected image contents are not sent with those requests.</p>
+        <h3>Your control</h3><p>You can stop using the tools at any time and clear this site's browser data using your browser settings. No online account is needed to process images.</p>
+      </div>
+      <div class="legal-dialog-content" data-legal-content="terms" hidden>
+        <p>MyPixelKit provides browser-based image utilities for personal and professional workflows. Your selected images are processed on your device and are not uploaded to MyPixelKit for processing.</p>
+        <h3>Use and results</h3><p>You are responsible for having the rights to use the files you select and for reviewing each output before using or sharing it. Processing quality and supported formats can vary by browser and device.</p>
+        <h3>Important checks</h3><p>Photo, DPI, size, and document requirements differ by agency and submission portal. Verify the latest official requirements before submitting an image. Tools are provided as-is and are not a guarantee that an image will be accepted.</p>
+        <h3>Availability</h3><p>Features may depend on browser support, available device memory, and file size. Keep your originals and backups; downloaded results are under your control.</p>
+      </div>
+      <div class="legal-dialog-content" data-legal-content="install" hidden>
+        <p>Install MyPixelKit for quick access from your home screen. Image processing still happens locally in your browser.</p>
+        <h3>On Android or desktop</h3><p>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong> in your browser menu.</p>
+        <h3>On iPhone or iPad</h3><p>In Safari, tap <strong>Share</strong>, then choose <strong>Add to Home Screen</strong>.</p>
+      </div>
+      <div class="legal-dialog-actions"><button class="new-task" type="button" data-close-legal>Close</button></div>
+    </dialog>
+    <div class="success-toast" id="successToast" role="status" aria-live="polite" hidden>File downloaded successfully! 🎉</div>
+    <script src="script.js"></script>
+  </body>
+</html>

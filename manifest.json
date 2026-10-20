@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "MyPixelKit - Free, Fast & 100% Private Image Tools",
+  "short_name": "MyPixelKit",
+  "description": "Private browser-based image tools for compressing, resizing, passport photos, and PDFs.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#f7f8fc",
+  "theme_color": "#7058e8",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
